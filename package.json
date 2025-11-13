@@ -1,0 +1,24 @@
+{
+  "name": "monorepo-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack application with Node.js backend, React frontend, and PostgreSQL database",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspaces",
+    "build:backend": "npm run build --workspace=backend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "test": "npm run test --workspaces",
+    "test:backend": "npm run test --workspace=backend",
+    "start:backend": "npm run start --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
