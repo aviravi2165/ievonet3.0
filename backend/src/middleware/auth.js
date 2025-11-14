@@ -23,4 +23,4 @@ const auth = (req, res, next) => {
   }
 };
 
-module.exports = { auth, authenticate: auth };
+module.exports = auth;

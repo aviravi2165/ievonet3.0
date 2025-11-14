@@ -5,6 +5,7 @@ const logger = require('./utils/logger');
 const errorHandler = require('./middleware/errorHandler');
 const authRoutes = require('./routes/authRoutes');
 const healthRoutes = require('./routes/healthRoutes');
+const moduleRoutes = require('./routes/moduleRoutes');
 const aiRoutes = require('./routes/ai');
 
 const app = express();
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api', healthRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/modules', moduleRoutes);
 app.use('/api/ai', aiRoutes);
 
 // 404 handler
