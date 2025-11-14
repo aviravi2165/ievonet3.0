@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from '@emotion/styled';
-import GlobalStyles from './styles/GlobalStyles';
+import GlobalStyles from './styles/GlobalStyles.jsx';
 import { useTheme } from './hooks/useTheme';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
