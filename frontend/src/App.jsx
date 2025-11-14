@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import GlobalStyles from './styles/GlobalStyles.jsx';
 import { useTheme } from './hooks/useTheme';
 import Navigation from './components/Navigation';
+import LeftDrawer from './components/LeftDrawer';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Demo from './pages/Demo';
@@ -26,12 +27,14 @@ const Main = styled.main`
 
 function App() {
   const { isDark, toggleTheme } = useTheme();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <Router>
       <GlobalStyles />
       <AppContainer isDark={isDark}>
-        <Navigation isDark={isDark} onThemeToggle={toggleTheme} />
+        <Navigation isDark={isDark} onThemeToggle={toggleTheme} onMenuToggle={() => setDrawerOpen(!drawerOpen)} />
+        <LeftDrawer isOpen={drawerOpen} isDark={isDark} onClose={() => setDrawerOpen(false)} />
         <Main>
           <Routes>
             <Route path="/" element={<Home isDark={isDark} />} />

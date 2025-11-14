@@ -89,7 +89,7 @@ const MobileMenu = styled.div`
   gap: 1rem;
 `;
 
-const Navigation = ({ isDark, onThemeToggle }) => {
+const Navigation = ({ isDark, onThemeToggle, onMenuToggle }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -100,6 +100,9 @@ const Navigation = ({ isDark, onThemeToggle }) => {
         </Logo>
 
         <NavLinks>
+          <DrawerToggleButton onClick={onMenuToggle} isDark={isDark}>
+            <Menu size={20} />
+          </DrawerToggleButton>
           <NavLink to="/" isDark={isDark}>
             Home
           </NavLink>
