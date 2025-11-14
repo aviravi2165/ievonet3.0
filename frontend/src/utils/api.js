@@ -40,4 +40,16 @@ export const healthAPI = {
   check: () => api.get('/health'),
 };
 
+export const scanVisitingCard = (formData) => {
+  return api.post('/ai/scan-visiting-card', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+};
+
+export const validateApiKey = (encryptedApiKey) => {
+  return api.post('/ai/validate-api-key', { encryptedApiKey });
+};
+
 export default api;
