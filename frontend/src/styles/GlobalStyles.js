@@ -1,4 +1,4 @@
-import { createGlobalStyle } from '@emotion/react';
+import { createGlobalStyle } from '@emotion/styled';
 
 const GlobalStyles = createGlobalStyle`
   * {
