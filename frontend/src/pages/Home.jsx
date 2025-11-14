@@ -144,7 +144,7 @@ const Home = ({ isDark }) => {
           <PrimaryButton to="/demo">
             Explore Demo <ArrowRight size={20} />
           </PrimaryButton>
-          <SecondaryButton to="/features" isDark={isDark}>
+          <SecondaryButton to="/features">
             Learn More
           </SecondaryButton>
         </CTA>
