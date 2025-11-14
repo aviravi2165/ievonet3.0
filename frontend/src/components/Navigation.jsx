@@ -76,6 +76,19 @@ const MobileMenuButton = styled.button`
   }
 `;
 
+const DrawerToggleButton = styled.button`
+  background: none;
+  border: none;
+  color: ${props => props.isDark ? '#f0f0f0' : '#212529'};
+  cursor: pointer;
+  display: none;
+  padding: 0.5rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
 const MobileMenu = styled.div`
   position: absolute;
   top: 60px;
@@ -95,7 +108,7 @@ const Navigation = ({ isDark, onThemeToggle, onMenuToggle }) => {
   return (
     <Nav isDark={isDark}>
       <Container>
-        <Logo to="/" isDark={isDark}>
+        <Logo to="/">
           🚀 FullStack App
         </Logo>
 
@@ -103,16 +116,16 @@ const Navigation = ({ isDark, onThemeToggle, onMenuToggle }) => {
           <DrawerToggleButton onClick={onMenuToggle} isDark={isDark}>
             <Menu size={20} />
           </DrawerToggleButton>
-          <NavLink to="/" isDark={isDark}>
+          <NavLink to="/">
             Home
           </NavLink>
-          <NavLink to="/demo" isDark={isDark}>
+          <NavLink to="/demo">
             Demo
           </NavLink>
-          <NavLink to="/features" isDark={isDark}>
+          <NavLink to="/features">
             Features
           </NavLink>
-          <NavLink to="/login" isDark={isDark}>
+          <NavLink to="/login">
             Login
           </NavLink>
           <ThemeButton onClick={onThemeToggle} isDark={isDark}>
@@ -126,16 +139,16 @@ const Navigation = ({ isDark, onThemeToggle, onMenuToggle }) => {
 
         {mobileMenuOpen && (
           <MobileMenu isDark={isDark}>
-            <NavLink to="/" isDark={isDark}>
+            <NavLink to="/">
               Home
             </NavLink>
-            <NavLink to="/demo" isDark={isDark}>
+            <NavLink to="/demo">
               Demo
             </NavLink>
-            <NavLink to="/features" isDark={isDark}>
+            <NavLink to="/features">
               Features
             </NavLink>
-            <NavLink to="/login" isDark={isDark}>
+            <NavLink to="/login">
               Login
             </NavLink>
             <ThemeButton onClick={onThemeToggle} isDark={isDark}>
